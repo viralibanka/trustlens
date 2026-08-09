@@ -3,7 +3,7 @@
 // =========================================================
 
 // FastAPI backend URL
-const API_URL = "http://127.0.0.1:8000/api/analyze";
+const API_URL = "https://YOUR-RENDER-URL.onrender.com/api/analyze";
 
 
 // =========================================================
