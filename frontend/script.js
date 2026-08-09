@@ -3,7 +3,7 @@
 // =========================================================
 
 // FastAPI backend URL
-const API_URL = "https://YOUR-RENDER-URL.onrender.com/api/analyze";
+const API_URL = "https://trustlens-uw66.onrender.com/api/analyze";
 
 
 // =========================================================
