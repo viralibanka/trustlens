@@ -4,13 +4,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.router import api_router
 from app.db.database import Base, engine
 from app.db import models
-app = FastAPI(title="TrustLens API")
-
-# Create database tables
-Base.metadata.create_all(bind=engine)
 
 
-# Create FastAPI application
+# =========================================================
+# TRUSTLENS FASTAPI APPLICATION
+# =========================================================
+
 app = FastAPI(
     title="TrustLens API",
     version="1.0.0",
@@ -18,19 +17,49 @@ app = FastAPI(
 )
 
 
-# Enable CORS for frontend
+# =========================================================
+# DATABASE
+# =========================================================
+
+Base.metadata.create_all(bind=engine)
+
+
+# =========================================================
+# CORS CONFIGURATION
+# =========================================================
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+
+        "http://127.0.0.1:8000",
+        "http://localhost:8000"
+    ],
+
     allow_credentials=True,
+
     allow_methods=["*"],
+
     allow_headers=["*"],
 )
 
 
-# Include API routes
-app.include_router(api_router, prefix="/api")
+# =========================================================
+# API ROUTES
+# =========================================================
 
+app.include_router(
+    api_router,
+    prefix="/api"
+)
+
+
+# =========================================================
+# ROOT ENDPOINT
+# =========================================================
 
 @app.get("/")
 def root():
@@ -38,6 +67,10 @@ def root():
         "message": "Welcome to TrustLens API 🛡️"
     }
 
+
+# =========================================================
+# HEALTH CHECK
+# =========================================================
 
 @app.get("/health")
 def health():
