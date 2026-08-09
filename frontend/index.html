@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrustLens | Digital Trust Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="brand">
+            <div class="brand-icon">🛡️</div>
+
+            <div>
+                <h2>TrustLens</h2>
+                <span>Digital Trust Intelligence</span>
+            </div>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            Protection Active
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <main class="container">
+
+        <section class="hero">
+            <div class="badge">🛡️ TRUST INTELLIGENCE</div>
+
+            <h1>
+                Check Before
+                <span>You Trust.</span>
+            </h1>
+
+            <p>
+                Analyze suspicious messages, internship offers, payment requests,
+                claims and URLs to identify risk signals and discover what you
+                should verify before taking action.
+            </p>
+        </section>
+
+
+        <!-- Analyzer -->
+        <section class="analyzer-card">
+
+            <div class="section-header">
+                <div>
+                    <h2>Analyze Content</h2>
+                    <p>Paste a message, claim, or suspicious link below.</p>
+                </div>
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="inputType">Content Type</label>
+
+                <select id="inputType">
+                    <option value="text">Message / Text</option>
+                    <option value="internship">Internship / Job Offer</option>
+                    <option value="url">URL / Website</option>
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="inputText">Content to Analyze</label>
+
+                <textarea
+                    id="inputText"
+                    placeholder="Example: Congratulations! You have been selected for an internship. Pay ₹1999 registration fee within 2 hours..."
+                    rows="7"
+                ></textarea>
+
+            </div>
+
+
+            <button id="analyzeBtn" class="analyze-btn">
+                <span id="buttonText">Analyze Trustworthiness</span>
+                <span id="buttonLoader" class="loader hidden"></span>
+            </button>
+
+            <p id="errorMessage" class="error-message hidden"></p>
+
+        </section>
+
+
+        <!-- Results -->
+        <section id="resultsSection" class="results-section hidden">
+
+            <!-- Trust Score -->
+            <div class="score-card">
+
+                <div class="score-left">
+
+                    <span class="result-label">TRUST SCORE</span>
+
+                    <div class="score-number">
+                        <span id="trustScore">0</span>
+                        <small>/100</small>
+                    </div>
+
+                    <div id="riskBadge" class="risk-badge">
+                        UNKNOWN
+                    </div>
+
+                </div>
+
+                <div class="score-message">
+                    <h3 id="resultTitle">Analysis Complete</h3>
+
+                    <p id="summary">
+                        Your analysis results will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Risk Signals -->
+            <div class="result-card">
+
+                <div class="card-title">
+                    <span class="card-icon danger">⚠️</span>
+
+                    <div>
+                        <h3>Risk Signals</h3>
+                        <p>Observable indicators detected in the content.</p>
+                    </div>
+                </div>
+
+                <div id="riskSignals" class="result-list"></div>
+
+            </div>
+
+
+            <!-- Evidence Gaps -->
+            <div class="result-card">
+
+                <div class="card-title">
+                    <span class="card-icon warning">🔎</span>
+
+                    <div>
+                        <h3>Evidence Gaps</h3>
+                        <p>Information that still needs independent verification.</p>
+                    </div>
+                </div>
+
+                <div id="evidenceGaps" class="result-list"></div>
+
+            </div>
+
+
+            <!-- Verification Steps -->
+            <div class="result-card">
+
+                <div class="card-title">
+                    <span class="card-icon success">✓</span>
+
+                    <div>
+                        <h3>What You Should Verify</h3>
+                        <p>Recommended checks before taking action.</p>
+                    </div>
+                </div>
+
+                <div id="verificationSteps" class="result-list"></div>
+
+            </div>
+
+
+            <!-- Action Plan -->
+            <div id="actionCard" class="result-card action-card">
+
+                <div class="card-title">
+                    <span class="card-icon action">🛡️</span>
+
+                    <div>
+                        <h3>Recommended Action</h3>
+                        <p>What TrustLens recommends you do next.</p>
+                    </div>
+                </div>
+
+                <div id="actionPlan" class="result-list"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- How It Works -->
+        <section class="how-section">
+
+            <div class="section-heading">
+                <span class="badge">HOW IT WORKS</span>
+
+                <h2>
+                    From uncertainty to
+                    <span>informed decisions.</span>
+                </h2>
+            </div>
+
+
+            <div class="steps-grid">
+
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Submit</h3>
+                    <p>
+                        Paste a suspicious message, claim, internship offer,
+                        or URL.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Analyze</h3>
+                    <p>
+                        TrustLens examines observable risk and verification
+                        signals.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Verify</h3>
+                    <p>
+                        Get evidence gaps and practical steps before making
+                        a decision.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            🛡️ TrustLens — Digital Trust & Decision Intelligence
+        </p>
+
+        <span>
+            Verify before you trust.
+        </span>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
